@@ -8,15 +8,25 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.pink,
         title: const Text(
           'NoteApp',
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.white, 
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
           ),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.search,
+                color: Colors.white,
+              ))
+        ],
       ),
     );
   }
 }
-
