@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/widget/custom_appbar.dart';
+import 'package:note_app/widget/custrom_card.dart';
 
 class CustomPageBody extends StatelessWidget {
   const CustomPageBody({super.key});
@@ -14,6 +15,10 @@ class CustomPageBody extends StatelessWidget {
             height: 50,
           ),
           CustomAppbar(),
+          SizedBox(
+            height: 50,
+          ),
+          CustomCard(),
         ],
       ),
     );
