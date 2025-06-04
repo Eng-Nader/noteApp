@@ -1,24 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/widget/custom_appbar.dart';
-import 'package:note_app/widget/custrom_card.dart';
+import 'package:note_app/widget/custom_listview.dart';
 
 class CustomPageBody extends StatelessWidget {
-  const CustomPageBody({super.key});
+  CustomPageBody({super.key});
 
+  List<Color> colorList = [
+    Colors.white,
+    Colors.red,
+    Colors.green,
+    Colors.yellow,
+    Colors.white,
+    Colors.red,
+    Colors.green,
+    Colors.yellow,
+    Colors.white,
+    Colors.red,
+  ];
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
-          CustomAppbar(),
-          SizedBox(
-            height: 50,
-          ),
-          CustomCard(),
+          const CustomAppbar(),
+          Expanded(
+              child: CustomListView(
+            colorList: colorList,
+          )),
         ],
       ),
     );
