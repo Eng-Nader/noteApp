@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:note_app/theme/app_theme.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({super.key, required this.color});
@@ -19,21 +20,13 @@ class CustomCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title: const Text(
+              title: Text(
                 'Flutter Tips',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                ),
+                style: AppTheme.bold30,
               ),
-              subtitle: const Text(
+              subtitle: Text(
                 'Create by Nader Sameer',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
-                ),
+                style: AppTheme.bold20,
               ),
               trailing: IconButton(
                 onPressed: () {},
