@@ -10,7 +10,6 @@ class AddNoteBouttom extends StatelessWidget {
       child: SizedBox(
         height: 600,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             TextField(
               decoration: InputDecoration(
@@ -19,25 +18,34 @@ class AddNoteBouttom extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                   )),
             ),
+            const SizedBox(
+              height: 20,
+            ),
             TextField(
               decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(vertical: 40),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 60),
                   hintText: '  content',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
                   )),
             ),
-            TextButton(
-              style: TextButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
-                  minimumSize: const Size(double.infinity, 50)),
-              onPressed: () {},
-              child: const Text(
-                'add',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+            const Spacer(
+              flex: 1,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 30),
+              child: TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    foregroundColor: Colors.white,
+                    minimumSize: const Size(double.infinity, 50)),
+                onPressed: () {},
+                child: const Text(
+                  'add',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             )
