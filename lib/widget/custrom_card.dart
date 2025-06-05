@@ -37,14 +37,11 @@ class CustomCard extends StatelessWidget {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(right: 16),
+            Padding(
+              padding: const EdgeInsets.only(right: 16),
               child: Text(
                 'May21 ,2021',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15,
-                ),
+                style: AppTheme.bold15,
               ),
             )
           ],

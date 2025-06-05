@@ -8,7 +8,13 @@ class AppTheme {
     color: Colors.black,
   );
   static TextStyle bold20 = GoogleFonts.nunitoSans(
-    fontSize: 30,
+    fontSize: 25,
+    fontWeight: FontWeight.bold,
+    color: Colors.black45,
+  );
+
+  static TextStyle bold15 = GoogleFonts.nunitoSans(
+    fontSize: 15,
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );
