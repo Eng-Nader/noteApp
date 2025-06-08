@@ -32,18 +32,21 @@ class AddNoteBouttom extends StatelessWidget {
               height: 100,
             ),
             TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: AppColor.primaryColor,
-                  minimumSize: const Size(double.infinity, 40),
-                  foregroundColor: Colors.black,
+              style: TextButton.styleFrom(
+                backgroundColor: AppColor.primaryColor,
+                minimumSize: const Size(double.infinity, 40),
+                foregroundColor: Colors.black,
+              ),
+              onPressed: () {},
+              child: const Text(
+                'add',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
                 ),
-                onPressed: () {},
-                child: const Text('add',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ))),
+              ),
+            ),
           ],
         ),
       ),

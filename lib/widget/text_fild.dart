@@ -14,12 +14,16 @@ class TextFiled extends StatelessWidget {
       decoration: InputDecoration(
         contentPadding: contentpadding,
         hintText: title,
+        hintStyle: const TextStyle(
+          color: AppColor.primaryColor,
+        ),
         border: const OutlineInputBorder(),
         focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(
-              color: AppColor.primaryColor,
-            )),
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(
+            color: Color.fromARGB(255, 14, 146, 115),
+          ),
+        ),
       ),
     );
   }
