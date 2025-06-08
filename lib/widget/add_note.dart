@@ -1,54 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/colors/app_color.dart';
+import 'package:note_app/theme/app_theme.dart';
+
+import 'package:note_app/widget/text_fild.dart';
 
 class AddNoteBouttom extends StatelessWidget {
   const AddNoteBouttom({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-      child: SizedBox(
-        height: 600,
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-            TextField(
-              decoration: InputDecoration(
-                  hintText: '  title',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  )),
+            const SizedBox(
+              height: 30,
+            ),
+            const TextFiled(
+              contentpadding: EdgeInsets.symmetric(vertical: 16),
+              title: '  title',
             ),
             const SizedBox(
-              height: 20,
+              height: 50,
             ),
-            TextField(
-              decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(vertical: 60),
-                  hintText: '  content',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  )),
+            const TextFiled(
+              contentpadding: EdgeInsets.symmetric(vertical: 50),
+              title: '  content',
             ),
-            const Spacer(
-              flex: 1,
+            const SizedBox(
+              height: 100,
             ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 30),
-              child: TextButton(
+            TextButton(
                 style: TextButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    minimumSize: const Size(double.infinity, 50)),
-                onPressed: () {},
-                child: const Text(
-                  'add',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  backgroundColor: AppColor.primaryColor,
+                  minimumSize: const Size(double.infinity, 40),
+                  foregroundColor: Colors.black,
                 ),
-              ),
-            )
+                onPressed: () {},
+                child: const Text('add',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ))),
           ],
         ),
       ),

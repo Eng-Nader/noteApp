@@ -13,5 +13,6 @@ class AppColor {
     Colors.white,
     Colors.red,
   ];
+  static const Color primaryColor = Color(0xff62fCD7) ; 
   
 }
