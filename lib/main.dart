@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/views/edit_page.dart';
 import 'package:note_app/views/home_page.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class NoteApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         HomePage.id: (context) => const HomePage(),
+        EditPage.id: (context) => const EditPage(),
       },
       initialRoute: HomePage.id,
     );
