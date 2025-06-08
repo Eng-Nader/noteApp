@@ -10,13 +10,4 @@ class NoteModel {
     required this.subtitle,
     required this.title,
   });
-
-  factory NoteModel.fromjson(jsonDate) {
-    return NoteModel(
-      date: jsonDate[],
-      color: jsonDate,
-      subtitle: jsonDate,
-      title: jsonDate,
-    );
-  }
 }
