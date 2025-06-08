@@ -14,7 +14,10 @@ class CustomPageBody extends StatelessWidget {
           SizedBox(
             height: 50,
           ),
-          CustomAppbar(),
+          CustomAppbar(
+            text: 'Notes',
+            icon: Icons.search,
+          ),
           Expanded(
             child: CustomListView(),
           ),
