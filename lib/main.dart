@@ -3,7 +3,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:note_app/views/edit_page.dart';
 import 'package:note_app/views/home_page.dart';
 import 'package:note_app/widget/constant.dart';
-
 void main() async {
   await Hive.initFlutter(); // must be init for hive flutter
   await Hive.openBox(kprimaryBox);

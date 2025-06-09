@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:note_app/colors/app_color.dart';
 
 class CustomBoutton extends StatelessWidget {
-  const CustomBoutton({super.key});
+  const CustomBoutton({super.key, required this.onPressed});
+  final VoidCallback onPressed ; 
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class CustomBoutton extends StatelessWidget {
         minimumSize: const Size(double.infinity, 40),
         foregroundColor: Colors.black,
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: const Text(
         'add',
         style: TextStyle(
