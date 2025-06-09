@@ -1,0 +1,1 @@
+const kprimaryBox = 'note_box'; 
