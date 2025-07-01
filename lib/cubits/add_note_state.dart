@@ -1,3 +1,4 @@
+
 abstract class AddNoteState {}
 
 class AddIntinalNote extends AddNoteState {}
@@ -10,3 +11,5 @@ class AddNoteFaliuer extends AddNoteState {
   final String errorMessage;
   AddNoteFaliuer(this.errorMessage);
 }
+
+

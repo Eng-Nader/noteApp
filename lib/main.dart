@@ -7,7 +7,7 @@ import 'package:note_app/widget/constant.dart';
 
 void main() async {
   await Hive.initFlutter(); // must be init for hive flutter
-  Hive.registerAdapter(NoteModelAdapter());
+   Hive.registerAdapter(NoteModelAdapter());  
   await Hive.openBox(kprimaryBox);
 
   runApp(const NoteApp());
