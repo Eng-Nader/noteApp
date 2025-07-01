@@ -22,22 +22,17 @@ class NoteApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => AddNoteCubit()),
-      ],
-      child: MaterialApp(
-        theme: ThemeData(
-          brightness: Brightness.dark,
-          fontFamily: 'Poppins',
-        ),
-        debugShowCheckedModeBanner: false,
-        routes: {
-          HomePage.id: (context) => const HomePage(),
-          EditPage.id: (context) => const EditPage(),
-        },
-        initialRoute: HomePage.id,
+    return MaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        fontFamily: 'Poppins',
       ),
+      debugShowCheckedModeBanner: false,
+      routes: {
+        HomePage.id: (context) => const HomePage(),
+        EditPage.id: (context) => const EditPage(),
+      },
+      initialRoute: HomePage.id,
     );
   }
 }
