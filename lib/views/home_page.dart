@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: AppColor.primaryColor,
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled: true,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
@@ -27,6 +28,7 @@ class HomePage extends StatelessWidget {
         child: const Icon(
           Icons.add,
           color: Colors.black,
+          size: 30,
         ),
       ),
     );

@@ -28,7 +28,7 @@ class _AddFormNoteState extends State<AddFormNote> {
       child: ListView(
         children: [
           const SizedBox(
-            height: 30,
+            height: 100,
           ),
           TextFiled(
             onSaved: (value) {
@@ -38,7 +38,7 @@ class _AddFormNoteState extends State<AddFormNote> {
             title: '  title',
           ),
           const SizedBox(
-            height: 50,
+            height: 20,
           ),
           TextFiled(
             onSaved: (vlaue) {
