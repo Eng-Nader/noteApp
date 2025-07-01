@@ -12,7 +12,7 @@ void main() async {
   Bloc.observer = SimpleBlocObserver();
   await Hive.initFlutter(); // must be init for hive flutter
   Hive.registerAdapter(NoteModelAdapter());
-  await Hive.openBox(kprimaryBox);
+  await Hive.openBox<NoteModel>(kprimaryBox);
 
   runApp(const NoteApp());
 }
@@ -24,9 +24,7 @@ class NoteApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => AddNoteCubit(),
-        ),
+        BlocProvider(create: (context) => AddNoteCubit()),
       ],
       child: MaterialApp(
         theme: ThemeData(
