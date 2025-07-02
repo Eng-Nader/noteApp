@@ -63,10 +63,9 @@ class _AddFormNoteState extends State<AddFormNote> {
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
-                    var currentDate = DateTime.now();
-                    var fomrmatedDate = DateFormat.yMd().format(currentDate);
+
                     var noteModel = NoteModel(
-                        date: fomrmatedDate,
+                        date: formatedDate(),
                         color: Colors.blue.value,
                         subtitle: subtitle!,
                         title: title!);
@@ -82,5 +81,11 @@ class _AddFormNoteState extends State<AddFormNote> {
         ],
       ),
     );
+  }
+
+  String formatedDate() {
+    var currentDate = DateTime.now();
+    var fomrmatedDate = DateFormat.yMd().format(currentDate);
+    return fomrmatedDate;
   }
 }
