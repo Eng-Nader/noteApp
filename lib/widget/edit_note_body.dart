@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/cubits/notes_cubit.dart';
 import 'package:note_app/models/note_model.dart';
-import 'package:note_app/widget/SnakBar.dart';
 import 'package:note_app/widget/custom_appbar.dart';
+import 'package:note_app/widget/notes_metod.dart';
 import 'package:note_app/widget/text_fild.dart';
 
 class EditNoteBody extends StatefulWidget {
