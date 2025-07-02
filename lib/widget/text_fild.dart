@@ -3,17 +3,16 @@ import 'package:note_app/colors/app_color.dart';
 
 class TextFiled extends StatelessWidget {
   const TextFiled(
-      {super.key,
-      required this.contentpadding,
-      required this.title,
-      this.onSaved});
+      {super.key, required this.contentpadding, this.onSaved, this.onChange, required this.hintText});
   final EdgeInsetsGeometry contentpadding;
-  final String title;
   final void Function(String?)? onSaved;
+  final void Function(String)? onChange;
+  final String hintText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChange,
       onSaved: onSaved,
       validator: (value) {
         if (value?.isEmpty ?? true) {
@@ -25,7 +24,7 @@ class TextFiled extends StatelessWidget {
       cursorColor: AppColor.primaryColor,
       decoration: InputDecoration(
         contentPadding: contentpadding,
-        hintText: title,
+        hintText: hintText,
         hintStyle: const TextStyle(
           color: AppColor.primaryColor,
         ),

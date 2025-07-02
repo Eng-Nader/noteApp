@@ -14,7 +14,14 @@ class CustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, EditPage.id);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return EditPage(notes: note);
+            },
+          ),
+        );
       },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 16),
@@ -40,7 +47,6 @@ class CustomCard extends StatelessWidget {
                   onPressed: () {
                     note.delete();
                     BlocProvider.of<NotesCubit>(context).diplayNotes();
-                    
                   },
                   icon: const Icon(
                     FontAwesomeIcons.trash,

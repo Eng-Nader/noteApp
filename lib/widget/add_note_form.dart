@@ -36,7 +36,7 @@ class _AddFormNoteState extends State<AddFormNote> {
               title = value;
             },
             contentpadding: const EdgeInsets.symmetric(vertical: 16),
-            title: '  title',
+            hintText: 'Title',
           ),
           const SizedBox(
             height: 20,
@@ -46,7 +46,7 @@ class _AddFormNoteState extends State<AddFormNote> {
               subtitle = vlaue;
             },
             contentpadding: const EdgeInsets.symmetric(vertical: 50),
-            title: '  content',
+            hintText: 'Content',
           ),
           const SizedBox(
             height: 100,

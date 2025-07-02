@@ -34,7 +34,6 @@ class NoteApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           HomePage.id: (context) => const HomePage(),
-          EditPage.id: (context) => const EditPage(),
         },
         initialRoute: HomePage.id,
       ),
