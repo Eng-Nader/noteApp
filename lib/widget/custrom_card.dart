@@ -10,7 +10,7 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap:(){
+      onTap: () {
         Navigator.pushNamed(context, EditPage.id);
       },
       child: Container(

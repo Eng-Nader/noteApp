@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/colors/app_color.dart';
+import 'package:note_app/cubits/notes_cubit.dart';
 import 'package:note_app/widget/add_note.dart';
 import 'package:note_app/widget/custom_page_body.dart';
 
@@ -9,26 +11,29 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: const CustomPageBody(),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColor.primaryColor,
-        onPressed: () {
-          showModalBottomSheet(
-            isScrollControlled: true,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            context: context,
-            builder: (context) {
-              return const AddNoteBouttom();
-            },
-          );
-        },
-        child: const Icon(
-          Icons.add,
-          color: Colors.black,
-          size: 30,
+    return BlocProvider(
+      create: (context) => NotesCubit(),
+      child: Scaffold(
+        body: const CustomPageBody(),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: AppColor.primaryColor,
+          onPressed: () {
+            showModalBottomSheet(
+              isScrollControlled: true,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              context: context,
+              builder: (context) {
+                return const AddNoteBouttom();
+              },
+            );
+          },
+          child: const Icon(
+            Icons.add,
+            color: Colors.black,
+            size: 30,
+          ),
         ),
       ),
     );
