@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:note_app/cubits/add_note_cubit.dart';
 import 'package:note_app/cubits/add_note_state.dart';
 import 'package:note_app/models/note_model.dart';
@@ -28,7 +29,7 @@ class _AddFormNoteState extends State<AddFormNote> {
       child: ListView(
         children: [
           const SizedBox(
-            height: 100,
+            height: 50,
           ),
           TextFiled(
             onSaved: (value) {
@@ -57,8 +58,10 @@ class _AddFormNoteState extends State<AddFormNote> {
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
+                    var currentDate = DateTime.now();
+                    var fomrmatedDate = DateFormat.yMd().format(currentDate);
                     var noteModel = NoteModel(
-                        date: DateTime.now().toString(),
+                        date: fomrmatedDate,
                         color: Colors.blue.value,
                         subtitle: subtitle!,
                         title: title!);
