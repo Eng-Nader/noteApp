@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_app/colors/app_color.dart';
 import 'package:note_app/cubits/notes_cubit.dart';
 import 'package:note_app/cubits/notes_state.dart';
 import 'package:note_app/models/note_model.dart';
@@ -15,8 +14,8 @@ class CustomListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubit, NotesState>(
       builder: (context, state) {
-        List<NoteModel> notes =
-            BlocProvider.of<NotesCubit>(context).notes ?? [];
+        List<NoteModel> notes = BlocProvider.of<NotesCubit>(context).notes!;
+
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 16),
           child: ListView.builder(
