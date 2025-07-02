@@ -1,12 +1,13 @@
-import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:note_app/widget/color_item.dart';
+
 class ColorsListItem extends StatefulWidget {
   const ColorsListItem({super.key});
 
   @override
   State<ColorsListItem> createState() => _ColorsListItemState();
 }
+
 class _ColorsListItemState extends State<ColorsListItem> {
   int currentIndex = 0;
   List<Color> colors = [
