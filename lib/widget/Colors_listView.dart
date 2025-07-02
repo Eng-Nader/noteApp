@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class ColorItem extends StatelessWidget {
@@ -6,9 +5,12 @@ class ColorItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CircleAvatar(
-      backgroundColor: Colors.red,
-      radius: 38,
+    return const Padding(
+      padding: EdgeInsets.only(right: 8),
+      child: CircleAvatar(
+        backgroundColor: Colors.red,
+        radius: 38,
+      ),
     );
   }
 }
@@ -21,11 +23,12 @@ class ColorsListItem extends StatelessWidget {
     return SizedBox(
       height: 38 * 2,
       child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: 2,
-          itemBuilder: (context, index) {
-            return const ColorItem();
-          }),
+        scrollDirection: Axis.horizontal,
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return const ColorItem();
+        },
+      ),
     );
   }
 }
