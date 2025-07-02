@@ -71,8 +71,8 @@ class _AddFormNoteState extends State<AddFormNote> {
                         subtitle: subtitle!,
                         title: title!);
                     BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
-
-                    showSnakBar(context, 'Add Note Sucess');
+                    
+                    showSnakBar(context, 'Add Note Sucess'); 
                   } else {
                     autovalidatemode = AutovalidateMode.always;
                     setState(() {});
