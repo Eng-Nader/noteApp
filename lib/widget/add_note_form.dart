@@ -6,6 +6,7 @@ import 'package:note_app/cubits/add_note_state.dart';
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/widget/Colors_listView.dart';
 import 'package:note_app/widget/custom_boutton.dart';
+import 'package:note_app/widget/notes_metod.dart';
 import 'package:note_app/widget/text_fild.dart';
 
 class AddFormNote extends StatefulWidget {
@@ -81,11 +82,5 @@ class _AddFormNoteState extends State<AddFormNote> {
         ],
       ),
     );
-  }
-
-  String formatedDate() {
-    var currentDate = DateTime.now();
-    var fomrmatedDate = DateFormat.yMd().format(currentDate);
-    return fomrmatedDate;
   }
 }
