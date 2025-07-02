@@ -24,65 +24,61 @@ class _AddFormNoteState extends State<AddFormNote> {
   String? title, subtitle;
 
   @override
-  Widget build(BuildContext context) {
-    return Form(
-      key: formKey,
-      autovalidateMode: autovalidatemode,
-      child: ListView(
-        children: [
-          const SizedBox(
-            height: 50,
-          ),
-          TextFiled(
-            onSaved: (value) {
-              title = value;
-            },
-            contentpadding: const EdgeInsets.symmetric(vertical: 16),
-            hintText: 'Title',
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          TextFiled(
-            onSaved: (vlaue) {
-              subtitle = vlaue;
-            },
-            contentpadding: const EdgeInsets.symmetric(vertical: 50),
-            hintText: 'Content',
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const ColorsListItem(),
-          const SizedBox(
-            height: 50,
-          ),
-          BlocBuilder<AddNoteCubit, AddNoteState>(
-            builder: (context, state) {
-              return CustomBoutton(
+  Widget build(BuildContext context) => Form(
+        key: formKey,
+        autovalidateMode: autovalidatemode,
+        child: ListView(
+          children: [
+            const SizedBox(
+              height: 50,
+            ),
+            TextFiled(
+              onSaved: (value) {
+                title = value;
+              },
+              contentpadding: const EdgeInsets.symmetric(vertical: 16),
+              hintText: 'Title',
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            TextFiled(
+              onSaved: (vlaue) {
+                subtitle = vlaue;
+              },
+              contentpadding: const EdgeInsets.symmetric(vertical: 50),
+              hintText: 'Content',
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const ColorsListItem(),
+            const SizedBox(
+              height: 50,
+            ),
+            BlocBuilder<AddNoteCubit, AddNoteState>(
+              builder: (context, state) => CustomBoutton(
                 isLoading: state is AddNoteLoading ? true : false,
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
 
-                    var noteModel = NoteModel(
+                    final noteModel = NoteModel(
                         date: formatedDate(),
                         color: Colors.blue.value,
                         subtitle: subtitle!,
                         title: title!);
                     BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
-                    
-                    showSnakBar(context, 'Add Note Sucess'); 
+
+                    showSnakBar(context, 'Add Note Sucess');
                   } else {
                     autovalidatemode = AutovalidateMode.always;
                     setState(() {});
                   }
                 },
-              );
-            },
-          ),
-        ],
-      ),
-    );
-  }
+              ),
+            ),
+          ],
+        ),
+      );
 }
