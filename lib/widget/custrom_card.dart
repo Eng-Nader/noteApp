@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:note_app/cubits/notes_cubit.dart';
 import 'package:note_app/models/note_model.dart';
-import 'package:note_app/theme/app_theme.dart';
 import 'package:note_app/views/edit_page.dart';
 
 class CustomCard extends StatelessWidget {
@@ -35,14 +34,18 @@ class CustomCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                title: Text(
-                  note.title,
-                  style: AppTheme.bold30,
-                ),
-                subtitle: Text(
-                  note.subtitle,
-                  style: AppTheme.bold20,
-                ),
+                title: Text(note.title,
+                    style: const TextStyle(
+                      fontSize: 30,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    )),
+                subtitle: Text(note.subtitle,
+                    style: const TextStyle(
+                      fontSize: 25,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold,
+                    )),
                 trailing: IconButton(
                   onPressed: () {
                     note.delete();
@@ -59,7 +62,11 @@ class CustomCard extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 16),
                 child: Text(
                   note.date,
-                  style: AppTheme.bold15,
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                  ),
                 ),
               )
             ],
