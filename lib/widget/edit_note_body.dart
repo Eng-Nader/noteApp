@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/cubits/notes_cubit.dart';
 import 'package:note_app/models/note_model.dart';
+import 'package:note_app/widget/SnakBar.dart';
 import 'package:note_app/widget/custom_appbar.dart';
 import 'package:note_app/widget/text_fild.dart';
 
@@ -28,10 +29,9 @@ class _EditNoteBodyState extends State<EditNoteBody> {
             text: 'Edit Note',
             icon: Icons.check,
             onPressed: () {
-              widget.notes.title = title ?? widget.notes.title;
-              widget.notes.subtitle = subtitle ?? widget.notes.subtitle;
-              widget.notes.save();
+              editNotes();
               BlocProvider.of<NotesCubit>(context).diplayNotes();
+              showSnakBar(context);
               Navigator.pop(context);
             },
           ),
@@ -58,5 +58,11 @@ class _EditNoteBodyState extends State<EditNoteBody> {
         ],
       ),
     );
+  }
+
+  void editNotes() {
+    widget.notes.title = title ?? widget.notes.title;
+    widget.notes.subtitle = subtitle ?? widget.notes.subtitle;
+    widget.notes.save();
   }
 }
