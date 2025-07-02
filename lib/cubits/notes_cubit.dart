@@ -6,20 +6,10 @@ import 'package:note_app/widget/constant.dart';
 
 class NotesCubit extends Cubit<NotesState> {
   NotesCubit() : super(NotesIntinaldStates());
+  List<NoteModel>? notes;
 
-  void diplayNotes(NoteModel notes) {
-    try {
-      var fetchbox = Hive.box<NoteModel>(kprimaryBox);
-      List<NoteModel> data = fetchbox.values.toList();
-      emit(NotesSucessStates(
-        notes: data,
-      ));
-    } catch (e) {
-      emit(
-        NotesFailuerStates(
-          e.toString(),
-        ),
-      );
-    }
+  void diplayNotes() {
+    var noteBox = Hive.box<NoteModel>(kprimaryBox);
+    notes = noteBox.values.toList();
   }
 }
