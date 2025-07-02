@@ -4,8 +4,7 @@ import 'package:note_app/theme/app_theme.dart';
 import 'package:note_app/views/edit_page.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({super.key, required this.color});
-  final Color color;
+  const CustomCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class CustomCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 16),
         decoration: BoxDecoration(
-          color: color,
+          color: Colors.brown,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Padding(
