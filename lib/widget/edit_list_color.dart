@@ -12,7 +12,13 @@ class ColorEditListView extends StatefulWidget {
 }
 
 class _ColorEditListViewState extends State<ColorEditListView> {
-  int currentIndex = 0;
+  late int currentIndex;
+  @override
+  void initState() {
+    currentIndex = colors.indexOf(Color(widget.note.color));
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
