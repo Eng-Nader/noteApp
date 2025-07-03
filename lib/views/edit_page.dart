@@ -11,6 +11,7 @@ class EditPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: EditNoteBody(
+        
         notes: notes,
       ),
     );

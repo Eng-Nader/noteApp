@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:hive/hive.dart';
 import 'package:note_app/cubits/add_note_state.dart';
 import 'package:bloc/bloc.dart';

@@ -24,6 +24,7 @@ class NoteApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => NotesCubit()),
+      
       ],
       child: MaterialApp(
         theme: ThemeData(

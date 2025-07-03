@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:note_app/cubits/add_note_cubit.dart';
 import 'package:note_app/cubits/notes_cubit.dart';
 import 'package:note_app/models/note_model.dart';
+import 'package:note_app/widget/Colors_listView.dart';
+import 'package:note_app/widget/color_item.dart';
+import 'package:note_app/widget/constant.dart';
 import 'package:note_app/widget/custom_appbar.dart';
+import 'package:note_app/widget/edit_list_color.dart';
 import 'package:note_app/widget/notes_method.dart';
 import 'package:note_app/widget/text_fild.dart';
 
@@ -16,6 +21,7 @@ class EditNoteBody extends StatefulWidget {
 
 class _EditNoteBodyState extends State<EditNoteBody> {
   String? title, subtitle;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,7 +37,7 @@ class _EditNoteBodyState extends State<EditNoteBody> {
             onPressed: () {
               editNotes();
               BlocProvider.of<NotesCubit>(context).diplayNotes();
-              showSnakBar(context ,'Edit Note Sucess');
+              showSnakBar(context, 'Edit Note Sucess');
               Navigator.pop(context);
             },
           ),
@@ -54,7 +60,11 @@ class _EditNoteBodyState extends State<EditNoteBody> {
             onChange: (value) {
               subtitle = value;
             },
-          )
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const ColorEditListView(),
         ],
       ),
     );
@@ -63,6 +73,8 @@ class _EditNoteBodyState extends State<EditNoteBody> {
   void editNotes() {
     widget.notes.title = title ?? widget.notes.title;
     widget.notes.subtitle = subtitle ?? widget.notes.subtitle;
+
     widget.notes.save();
   }
 }
+
