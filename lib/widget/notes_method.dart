@@ -6,7 +6,7 @@ String formatedDate() {
   String fomrmatedDate = DateFormat.yMd().format(currentDate);
   return fomrmatedDate;
 }
-
+ 
 void showSnakBar(BuildContext context, String title) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
