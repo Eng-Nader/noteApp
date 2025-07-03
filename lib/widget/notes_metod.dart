@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 String formatedDate() {
-  var currentDate = DateTime.now();
-  var fomrmatedDate = DateFormat.yMd().format(currentDate);
+  DateTime currentDate = DateTime.now();
+  String fomrmatedDate = DateFormat.yMd().format(currentDate);
   return fomrmatedDate;
 }
 
@@ -23,4 +23,3 @@ void showSnakBar(BuildContext context, String title) {
     ),
   );
 }
-
