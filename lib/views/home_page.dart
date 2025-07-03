@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
             ),
             context: context,
             builder: (context) {
-              return const AddNoteBouttom();
+              return AddNoteBouttom();
             },
           );
         },

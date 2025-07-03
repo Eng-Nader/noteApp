@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:note_app/cubits/add_note_cubit.dart';
 import 'package:note_app/cubits/add_note_state.dart';
 import 'package:note_app/models/note_model.dart';
@@ -70,8 +71,8 @@ class _AddFormNoteState extends State<AddFormNote> {
                         subtitle: subtitle!,
                         title: title!);
                     BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
-
-                    showSnakBar(context, 'Add Note Sucess');
+                    
+                    showSnakBar(context, 'Add Note Sucess'); 
                   } else {
                     autovalidatemode = AutovalidateMode.always;
                     setState(() {});
