@@ -17,12 +17,13 @@ class HomePage extends StatelessWidget {
         backgroundColor: AppColor.primaryColor,
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled: true,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
             context: context,
             builder: (context) {
-              return AddNoteBouttom();
+              return const AddNoteBouttom();
             },
           );
         },
