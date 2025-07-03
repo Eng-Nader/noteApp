@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_app/cubits/add_note_cubit.dart';
 import 'package:note_app/cubits/notes_cubit.dart';
 import 'package:note_app/models/note_model.dart';
-import 'package:note_app/widget/Colors_listView.dart';
-import 'package:note_app/widget/color_item.dart';
-import 'package:note_app/widget/constant.dart';
 import 'package:note_app/widget/custom_appbar.dart';
 import 'package:note_app/widget/edit_list_color.dart';
 import 'package:note_app/widget/notes_method.dart';
@@ -64,7 +60,9 @@ class _EditNoteBodyState extends State<EditNoteBody> {
           const SizedBox(
             height: 20,
           ),
-          const ColorEditListView(),
+          ColorEditListView(
+            note: widget.notes,
+          ),
         ],
       ),
     );
@@ -77,4 +75,3 @@ class _EditNoteBodyState extends State<EditNoteBody> {
     widget.notes.save();
   }
 }
-
