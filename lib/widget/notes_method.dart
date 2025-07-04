@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -6,20 +7,18 @@ String formatedDate() {
   String fomrmatedDate = DateFormat.yMd().format(currentDate);
   return fomrmatedDate;
 }
- 
-void showSnakBar(BuildContext context, String title) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      padding: const EdgeInsets.all(16),
-      action: SnackBarAction(label: 'Close', onPressed: () {}),
-      content: Text(
-        title,
-        style: const TextStyle(
-          color: Colors.black,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+
+void showSnakBar({ required BuildContext context,  required String title , required String message}) {
+  var snackBar = SnackBar(
+    elevation: 0,
+    backgroundColor: Colors.transparent,
+    content: AwesomeSnackbarContent(
+      title: title, 
+      message:  message , 
+      contentType: ContentType.success,
     ),
   );
+  ScaffoldMessenger.of(context)
+    ..hideCurrentSnackBar()
+    ..showSnackBar(snackBar);
 }

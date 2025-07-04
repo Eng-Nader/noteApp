@@ -33,7 +33,11 @@ class _EditNoteBodyState extends State<EditNoteBody> {
             onPressed: () {
               editNotes();
               BlocProvider.of<NotesCubit>(context).diplayNotes();
-              showSnakBar(context, 'Edit Note Sucess');
+              showSnakBar(
+                context: context,
+                title: 'Edit note',
+                message: 'Edit Note Success',
+              );
               Navigator.pop(context);
             },
           ),
